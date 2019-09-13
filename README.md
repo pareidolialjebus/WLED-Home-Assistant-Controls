@@ -1,7 +1,7 @@
 # WLED-Home-Assistant-Controls
 ## Some examples of using Home Assistant to control WLED
 
-This guide assumes the user has added an MQTT broker and linked this to a WLED install in Home Assistant.  Once I've added a few controls I'll go back and add some setup information.  I followed the setup guide to add the mosquitto mqtt broker and then watched the Drzzs video to the a WLED node talking to Home Assistant. 
+This guide assumes the user has added an MQTT broker and linked this to a WLED install in Home Assistant.  Once I've added a few controls I'll go back and add some setup information.  I followed the setup guide to add the mosquitto mqtt broker and then watched the Drzzs video here https://www.youtube.com/watch?v=GyXEzLoX1cE to get the a WLED node talking to Home Assistant. 
 
 ### Control Pallette
 
@@ -65,9 +65,9 @@ input_select:
       - "48-C9"
       - "49-Sakura"
 ```
-Once you've added the input_select the next thing is to add an automation to change the 
+Once you've added the input_select to the ```config.yaml``` file the next thing is to add an automation to change the palette when the drop down is clicked.
 
-
+```
 - id: wled_select345335345
   alias: wled_select
   trigger:
@@ -79,4 +79,7 @@ Once you've added the input_select the next thing is to add an automation to cha
       topic: "wled/wled1/api"
       payload: 'FP={{ states(''input_select.wled_palette'')[:2] }}'
     service: mqtt.publish
-    
+```
+The trigger section means that the automation runs when the dropdown box is changed.
+The action section uses a template to pull the first two characters from input_select.wled_palette and combines them with FX= to complete a payload.
+
