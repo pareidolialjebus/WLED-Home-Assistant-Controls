@@ -1,7 +1,7 @@
 # WLED-Home-Assistant-Controls
 ## Some examples of using Home Assistant to control WLED
 
-This guide assumes the user has added an MQTT broker and linked this to a WLED install in Home Assistant.  Once I've added a few controls I'll go back and add some setup information.  I followed the setup guide to add the mosquitto mqtt broker and then watched the Drzzs video here https://www.youtube.com/watch?v=GyXEzLoX1cE to get the a WLED node talking to Home Assistant. 
+This guide assumes the user has added an MQTT broker and linked this to a WLED install in Home Assistant.  Once I've added a few controls I'll go back and add some setup information.  I followed the setup guide here https://www.home-assistant.io/addons/mosquitto/ to add the mosquitto mqtt broker and then watched the Drzzs video here https://www.youtube.com/watch?v=GyXEzLoX1cE to get the a WLED node talking to Home Assistant. 
 
 ### Control Pallette
 
