@@ -1,21 +1,18 @@
 # WLED-Home-Assistant-Controls
-Some examples of using Home Assistant to control WLED
+## Some examples of using Home Assistant to control WLED
 
-This assumes the user has added an MQTT broker and linked this to a WLED install in Home Assistant
+This guide assumes the user has added an MQTT broker and linked this to a WLED install in Home Assistant.  Once I've added a few controls I'll go back and add some setup information.  I followed the setup guide to add the mosquitto mqtt broker and then watched the Drzzs video to the a WLED node talking to Home Assistant. 
 
-Control Pallette
+### Control Pallette
 
-To control the palette from a drop down box, first set up an input_select.  
-This is the drop down control you will later add to the home assistant front end.  
-Give it a name (I just used WLED Palette).  
-You will probably need multiple copies of this if controlling multiple led strips this way.
+To control the palette from a drop down box, first set up an input_select. This is the drop down control you will later add to the home assistant front end. Give it a name (I just used WLED Palette).
 
+You will probably need multiple copies of this if controlling multiple led strips this way, so if you add more make sure to give them different names such as ```wled_palette1``` , ```wled_palette2``` etc
+
+```
 input_select:
-
   wled_palette:
-  
   name: WLED Palette
-
     options:
       - "00-Default"
       - "01-Random Cycle"
@@ -67,6 +64,9 @@ input_select:
       - "47-Orangery"
       - "48-C9"
       - "49-Sakura"
+```
+Once you've added the input_select the next thing is to add an automation to change the 
+
 
 - id: wled_select345335345
   alias: wled_select
